@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SGP | Startpagina</title>
+  <link href="https://mnsmi.github.io/persstart/src/sgp/Paralucent_Condensed_Bold.otf" rel="stylesheet" /> <!--Titels-->
+  <link href="sgp_.css" rel="stylesheet"> <!--Offline code CSS-->
+  <link href="#" rel="stylesheet"> <!--Online CSS-->
+  <link rel="icon" href="https://mnsmi.github.io/persstart/src/sgp/Logo_oranje.svg" type="image/svg+xml"> 
+</head>
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      const loader = document.getElementById("loader");
+      loader.style.opacity = 0;
+      setTimeout(() => {
+        loader.style.display = "none";
+        document.body.classList.remove("hide-content");
+      }, 500);
+    }, 1500); // Minimale tijd
+  });
+</script>
+<body class="hide-content">
+  <div id="loader">
+    <img src="https://mnsmi.github.io/persstart/src/sgp/sgp_loader.gif" alt="Laden..." />
+  </div>
+  <img class="sgp-logo" loading="lazy" src="https://mnsmi.github.io/persstart/src/sgp/Logo_oranje.svg" draggable="false" alt="Logo">
+  <div class="search-container">
+    <div class="search-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" width="32" height="32" draggable="false"/>
+      <form action="https://www.google.com/search" method="GET">
+        <input type="text" name="q" placeholder="Google zoeken..." />
+       <a class="" type="submit">
+            <button>
+                <span class="material-icons">search</span>
+            </button>
+       </a>
+      </form>
+    </div>
+  </div>
+<div class="section">
+    <h2>Sectie 1</h2>
+    <div class="links-container">
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+    </div>
+</div>
+<div class="section">
+    <h2>Sectie 2</h2>
+    <div class="links-container">
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+        <a class="link" target="_blank" href="#"><img src="[link afbeelding]">naam link</a>
+    </div>
+</div>
+</body>
+</html>
