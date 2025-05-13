@@ -1,0 +1,184 @@
+    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+    @font-face {
+      font-family: 'NewRubrikEdge';
+      src: url('https://mnsmi.github.io/webfont/NewRubrikEdge-ExtraBold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'NewRubrikEdgeMedium';
+      src: url('https://mnsmi.github.io/webfont/NewRubrikEdge-Medium.ttf') format('truetype'); 
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      text-align: center;
+      font-family: 'NewRubrikEdgeMedium';
+      background-color: #f4f4f4;
+      background-image: url(https://www.sgpj.nl/theme/assets/images/sgp-doe-mee.svg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    body::before {
+        transform: scaleX(-1);
+    }
+
+    .search-container {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .search-item {
+      display: flex;
+      align-items: center;
+    }
+
+
+    .search-item form {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+      }
+      
+      .search-container input {
+        width: 320px;
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        height: 42px;
+        box-sizing: border-box;
+      }
+      
+      .search-container button {
+        margin-left: 10px;
+        padding: 0 16px;
+        height: 42px;
+        border: none;
+        background-color: #4285F4;
+        color: white;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease;
+      }
+      
+      .search-container button:hover {
+        background-color: #357ae8;
+      }
+      
+
+    .section {
+      width: 90%;
+      max-width: 800px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+    }
+
+    h1 {
+        color: white;
+    }
+
+    h2 {
+      font-family: 'NewRubrikEdge', sans-serif;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .links-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .link:hover {
+      background: #f0f0f0;
+    }
+
+    .link img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .material-button {
+      display: flex;
+      height: 35px;
+      align-items: center;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      background: #4285F4;
+    }
+
+    .material-button .material-icons {
+      margin-right: 8px;
+    }
+
+    .sgpj-logo {
+        height: 100px;
+        width: auto;
+        margin-bottom: 15px;
+    }
+
+    input {
+      font-family: 'NewRubrikEdgeMedium';
+    }
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+  
+    #loader img {
+      width: 100px;
+      height: auto;
+    }
+  
+    .hide-content > *:not(#loader) {
+      display: none;
+    }
