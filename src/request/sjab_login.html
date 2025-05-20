@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Inloggen | Persoonlijke Startpagina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://i.postimg.cc/DwDTrK51/ps-sign.png" rel="icon" type="image/png">
+</head>
+<style>
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-image: url(https://4kwallpapers.com/images/wallpapers/macos-monterey-stock-black-dark-mode-layers-5k-5120x2880-5889.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+button {
+    font-family: 'Montserrat';
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #292929;
+}
+</style>
+
+<body>
+    <div class="container">
+        <h2>Inloggen</h2>
+        <form id="loginForm">
+            <label for="username">Gebruikersnaam</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Wachtwoord</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Inloggen</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    async function loadCredentials() {
+        const response = await fetch('https://mnsmi.github.io/persstart/src/request/test.json'); // sjab json wijzigen met url,username,password & uploaden naar github repo
+        const data = await response.json();
+        return data;
+    }
+
+    async function validateLogin(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const credentials = await loadCredentials();
+
+            if (username === credentials.username && password === credentials.password) {
+                window.location.href = credentials.redirectUrl;
+            } else {
+                alert("Onjuiste gebruikersnaam of wachtwoord. Probeer opnieuw.");
+            }
+        } catch (error) {
+            alert("Er is een probleem met het inladen van de gegevens. Probeer het later opnieuw.");
+            console.error(error);
+        }
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', validateLogin);
+</script>
+
+</html>
