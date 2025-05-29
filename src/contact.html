@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Wijzigingen aanvragen | Persoonlijke Startpagina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://mnsmi.github.io/persstart/src/request/loader.css" rel="stylesheet">
+    <link href="https://i.postimg.cc/DwDTrK51/ps-sign.png" rel="icon" type="image/png">
+</head>
+<style>
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-image: url(https://4kwallpapers.com/images/wallpapers/macos-monterey-stock-black-dark-mode-layers-5k-5120x2880-5889.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    }
+
+.container {
+      width: 90%;
+      max-width: 800px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+    }
+
+    form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.formbutton {
+    font-family: 'Montserrat';
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formbutton:hover {
+    background-color: #292929;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    appearance: none;
+    background-image: url("https://mnsmi.github.io/persstart/src/request/img/keyboard_arrow_down_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 35px;
+}
+
+#loader {
+      position: fixed;
+      inset: 0;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+  
+#loader img {
+      width: 100px;
+      height: auto;
+    }
+  
+.hide-content > *:not(#loader) {
+      display: none;
+    }
+</style>
+<script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        const loader = document.getElementById("loader");
+        loader.style.opacity = 0;
+        setTimeout(() => {
+          loader.style.display = "none";
+          document.body.classList.remove("hide-content");
+        }, 500);
+      }, 2000); // Minimale tijd
+    });
+  </script>
+<body class="hide-content">
+    <div id="loader">
+        <div class="loader">
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__ball"></div>
+          </div>
+    </div>
+    <div class="container">
+        <h1>Contact opnemen</h1>
+        <form action="https://formspree.io/f/xdkgvyqg" method="POST">
+            <label for="name-person">Naam</label>
+            <input type="text" id="name-person" name="name-person" required>
+    
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="bericht">Opmerkingen/bericht</label>
+            <textarea id="bericht" name="bericht" rows="10" required></textarea>
+    
+            <button type="submit" class="formbutton">Versturen</button>
+        </form>
+    </div>
+</body>
